@@ -1,3 +1,9 @@
+// Modification and improvement to be made to the project:
+// - Improve performance with an alternative to setInterval
+// - Optimize code structure
+// - Add a button which will then restart a game keeping the names of the players
+// - Add a victory counter.
+
 const container = document.querySelector("ul");
 const player1 = prompt("Enter player's 1 name");
 const player2 = prompt("Enter player's 2 name");
