@@ -26,7 +26,7 @@ margin-top: 50px;
 .square {
     border: 1px  solid black;
     list-style: none;
-    font-size: 150px;
+    font-size: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,4 +51,8 @@ margin-top: 50px;
         width: 80vh;
         height: 80vh;
         }
+
+    .square {
+        font-size: 150px;
+    }
 }
