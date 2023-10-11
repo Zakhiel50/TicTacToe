@@ -76,7 +76,7 @@ function alternateXY() {
 
     } 
     else {
-      whosTurn.innerHTML = `It's ${player2}'s turn ( X )`;
+      whosTurn.innerHTML = `It's ${player2}'s turn ( O )`;
       whosTurn.style.backgroundColor = "yellow";
     }
   } 
