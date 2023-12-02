@@ -14,8 +14,9 @@ const whosTurn = document.querySelector(".turnPlayer");
 const btn = document.querySelector(".btn");
 
 
+
 function endGame() {
-  if (counter === 9) {
+  if (counter === 9 && !win())  {
     whosTurn.innerHTML = "Draw";
     whosTurn.style.backgroundColor = "grey";
   } 
