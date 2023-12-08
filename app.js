@@ -11,21 +11,19 @@ const auTourDe = "Au tour de ";
 let counter = 0;
 let currentGame = true;
 const whosTurn = document.querySelector(".turnPlayer");
-const btn = document.querySelector(".btn");
+const btn = document.querySelector("button")
+
 
 
 
 function endGame() {
-  if (counter === 9 && !win())  {
-    whosTurn.innerHTML = "Draw";
-    whosTurn.style.backgroundColor = "grey";
-  } 
-  else {
-    currentGame = false;
+  btn.classList.remove("hidden")
+  btn.classList.add("visible")
+
+  currentGame = false;
   return currentGame;
-  }
-  
 }
+  
 
 // Create squares
 const squares = [];
@@ -43,6 +41,7 @@ function createSquare(i) {
     }
   });
   container.appendChild(square);
+  
   return square;
 }
 
@@ -129,7 +128,12 @@ function checkWinConditions() {
       squares[n1].textContent === squares[n3].textContent
     ) {
       win(n1, n2, n3);
-      break;
+    } else if(counter === 9 && 
+      whosTurn.innerHTML != `${player1}'s win! ` && 
+      whosTurn.innerHTML != `${player2}'s win! `
+      ) {
+      whosTurn.innerHTML = "Draw";
+      whosTurn.style.backgroundColor = "grey";
     }
   }
 }
@@ -139,8 +143,26 @@ if (currentGame === true) {
   squares[i] = createSquare(i);
   }
   setInterval(alternateXY, 1000);
-setInterval(checkWinConditions, 1000);
+  setInterval(checkWinConditions, 1000);
 } 
+
+
+
+btn.addEventListener("click", resetGame);
+
+function resetGame() {
+  
+  for (let i = 0; i < squares.length; i++) {
+    console.log(squares[i])
+    squares[i].innerHTML = ""
+    squares[i].classList.remove("lightgreen")
+    squares[i].classList.remove("yellow")
+  }
+  currentGame = true
+  counter = 0
+  btn.classList.remove("visible")
+  btn.classList.add("hidden")
+}
 
  
 

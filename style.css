@@ -47,6 +47,22 @@ margin-top: 50px;
     margin-top: 20px;
 }
 
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+.btn {
+    position: absolute;
+    top: 50vh;
+    left: 35%;
+   
+    background-color: azure;
+    font-size: 10vw;
+}
+
 @media screen and (min-width: 600px) {
     .container {
         width: 80vh;
